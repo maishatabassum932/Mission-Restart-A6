@@ -1,3 +1,4 @@
+let cart = [];
 function loadCategories(){
     const url="https://fakestoreapi.com/products/categories"
     fetch(url)
@@ -5,6 +6,7 @@ function loadCategories(){
     .then(data=>displayCategories(data))
 }
 function loadAllProducts(){
+    showSpinner();
     removeActive()
     const allBtn = document.getElementById("btn-all")
     if(allBtn){
@@ -13,9 +15,13 @@ function loadAllProducts(){
     const url="https://fakestoreapi.com/products"
     fetch(url)
     .then(res=>res.json())
-    .then(data=> displayAllProducts(data))
+    .then(data=> {
+        displayAllProducts(data)
+        hideSpinner();
+    })
 }
 function loadCategoryProduct(id){
+    showSpinner();
       removeActive();
       const clickedBtn=document.getElementById(`btn-${id}`)
      if(clickedBtn){
@@ -24,7 +30,10 @@ function loadCategoryProduct(id){
     const url=`https://fakestoreapi.com/products/category/${encodeURIComponent(id)}`
     fetch(url)
     .then(res=>res.json())
-    .then(data=>displayAllProducts(data))
+    .then(data=>{
+        hideSpinner();
+        displayAllProducts(data)
+    })
    
 }
 function loadProductDetails(proId){
@@ -75,7 +84,7 @@ function displayAllProducts(products){
   <i class="fa-solid fa-eye"></i>
   Details
 </button>
-<button class="btn flex flex-1  items-center justify-center gap-2 bg-blue-600 text-white hover:bg-blue-700 border-none">
+<button onclick="addToCart(${product.id})" class="btn flex flex-1  items-center justify-center gap-2 bg-blue-600 text-white hover:bg-blue-700 border-none">
   <i class="fa-solid fa-cart-shopping"></i>
   Add
 </button>
@@ -102,7 +111,6 @@ function displayCategories(categories){
     button.addEventListener("click", function(){
         loadCategoryProduct(cat)
     })
-
     catDiv.appendChild(button)
     categoryContainer.appendChild(catDiv)
     }
@@ -115,5 +123,22 @@ function removeActive(){
         btn.classList.remove("active")
     }
 }
+
+function showSpinner(){
+    document.getElementById("loading-spinner").classList.remove("hidden");
+}
+
+function hideSpinner(){
+    document.getElementById("loading-spinner").classList.add("hidden");
+}
+function updateCartCount(){
+    const count = document.getElementById("cart-count");
+    count.innerText = cart.length;
+}
+function addToCart(id){
+    cart.push(id);
+    updateCartCount();
+}
+
 loadCategories()
 loadAllProducts()

@@ -40,7 +40,7 @@
   <div class="navbar-end">
      <div class="indicator">
           <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" /> </svg>
-          <span class="badge badge-sm indicator-item">8</span>
+          <span id="cart-count"  class="badge badge-sm indicator-item">0</span>
         </div>
       <div class="dropdown ml-5">
       <div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
@@ -71,7 +71,7 @@
         Discover the latest trends in fashion, electronics, and
         more. Shop with confidence and style at SwiftCart.
       </p>
-      <button class="btn btn-primary">Shop Now</button>
+      <button class="btn btn-primary"><a href="product.html">Shop Now</a></button>
     </div>
   </div>
 </div>
@@ -141,77 +141,8 @@ products easily within 30 days.</p>
         <div>
           <h2 class="text-3xl font-bold">Trending Now</h2>
         </div>
-        <div class="mt-16 grid grid-cols-1 md:grid-cols-3 gap-8">
-          <div class="card bg-base-100 shadow-sm">
-  <figure>
-    <img src="./Assets/shoe.jpeg" alt="bag">
-  </figure>
-  <div class="card-body">
-    <div class="flex justify-between items-center"><div class="badge bg-[#EEF2FF] text-[#4F46E5] font-medium">Girl's Clothing</div>
-    <div class="flex items-center gap-2"><i class="fa-solid fa-star text-yellow-300"></i>
-    <p class="text-[#4B5563]">3.9(129)</p></div></div>
-    <h2 class="card-title font-semibold">Girls Pink NIKE Shoe</h2>
-    <p class="font-bold text-xl">$109.95</p>
-    <div class="card-actions flex gap-3">
-      <button class="btn flex-1 flex items-center justify-center gap-2-">
-  <i class="fa-solid fa-eye"></i>
-  Details
-</button>
-<button class="btn flex-1 flex items-center justify-center gap-2 bg-blue-600 text-white hover:bg-blue-700 border-none flex items-center gap-2">
-  <i class="fa-solid fa-cart-shopping"></i>
-  Add
-</button>
-
-    </div>
-  </div>
-</div>
-
-<div class="card bg-base-100  shadow-sm">
-  <figure>
-    <img src="./Assets/Pink dress.jpg" alt="dress">
-  </figure>
-  <div class="card-body">
-    <div class="flex justify-between items-center"><div class="badge bg-[#EEF2FF] text-[#4F46E5] font-medium">Girl's Clothing</div>
-    <div class="flex items-center gap-2"><i class="fa-solid fa-star text-yellow-300"></i>
-    <p class="text-[#4B5563]">3.9(129)</p></div></div>
-    <h2 class="card-title font-semibold">Girls Pink NIKE Shoe</h2>
-    <p class="font-bold text-xl">$109.95</p>
-    <div class="card-actions flex gap-3">
-      <button class="btn flex-1 flex items-center justify-center gap-2">
-  <i class="fa-solid fa-eye"></i>
-  Details
-</button>
-<button class="btn flex-1 flex items-center justify-center gap-2 bg-blue-600 text-white hover:bg-blue-700 border-none flex items-center gap-2">
-  <i class="fa-solid fa-cart-shopping"></i>
-  Add
-</button>
-
-    </div>
-  </div>
-</div>
-<div class="card bg-base-100 shadow-sm">
-  <figure>
-    <img src="./Assets/bag.avif" alt="bag">
-  </figure>
-  <div class="card-body">
-    <div class="flex justify-between items-center"><div class="badge bg-[#EEF2FF] text-[#4F46E5] font-medium">Girl's Clothing</div>
-    <div class="flex items-center gap-2"><i class="fa-solid fa-star text-yellow-300"></i>
-    <p class="text-[#4B5563]">3.9(129)</p></div></div>
-    <h2 class="card-title font-semibold">Girls Pink NIKE Shoe</h2>
-    <p class="font-bold text-xl">$109.95</p>
-    <div class="card-actions flex gap-3">
-      <button class="btn flex-1 flex items-center justify-center gap-2-">
-  <i class="fa-solid fa-eye"></i>
-  Details
-</button>
-<button class="btn flex-1 flex items-center justify-center gap-2 bg-blue-600 text-white hover:bg-blue-700 border-none flex items-center gap-2">
-  <i class="fa-solid fa-cart-shopping"></i>
-  Add
-</button>
-
-    </div>
-  </div>
-</div>
+        <div id="trending-container" class="mt-16 grid grid-cols-1 md:grid-cols-3 gap-8">
+          
         </div>
     </div>
   </section>
@@ -281,7 +212,18 @@ to your inbox weekly.</p>
 </footer>
 
      </div>
-  </section>
+    </section>
+     <!-- Open the modal using ID.showModal() method -->
 
+<dialog id="product_details" class="modal modal-bottom sm:modal-middle">
+  <div class="modal-box">
+    <div id="details_container">
+    
+    </div>
+  </div>
+</dialog>
+    <script src="./script/product.js"></script>
+    <script src="./script/index.js"></script>
 </body>
+
 </html>
