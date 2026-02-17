@@ -5,17 +5,27 @@ function loadCategories(){
     .then(data=>displayCategories(data))
 }
 function loadAllProducts(){
+    removeActive()
+    const allBtn = document.getElementById("btn-all")
+    if(allBtn){
+        allBtn.classList.add("active")
+    }
     const url="https://fakestoreapi.com/products"
     fetch(url)
     .then(res=>res.json())
     .then(data=> displayAllProducts(data))
 }
 function loadCategoryProduct(id){
+      removeActive();
+      const clickedBtn=document.getElementById(`btn-${id}`)
+     if(clickedBtn){
+    clickedBtn.classList.add("active")
+    }
     const url=`https://fakestoreapi.com/products/category/${encodeURIComponent(id)}`
     fetch(url)
     .then(res=>res.json())
     .then(data=>displayAllProducts(data))
-
+   
 }
 function loadProductDetails(proId){
     const url=`https://fakestoreapi.com/products/${proId}`
@@ -79,13 +89,14 @@ function displayAllProducts(products){
 function displayCategories(categories){
     const categoryContainer=document.getElementById('category-container')
     categoryContainer.innerHTML=`<div>
-         <button onclick="loadAllProducts()" id="btn-all" class="btn btn-md rounded-xl">All</button>
+         <button onclick="loadAllProducts()" id="btn-all" class="btn btn-md rounded-xl active">All</button>
         </div>`
     for(const cat of categories){
         const catDiv=document.createElement('div')
         const button = document.createElement('button')
-
-    button.className = "btn btn-md rounded-xl"
+    
+    button.id=`btn-${cat}`
+    button.className = "btn btn-md rounded-xl "
     button.innerText = cat
 
     button.addEventListener("click", function(){
@@ -96,6 +107,13 @@ function displayCategories(categories){
     categoryContainer.appendChild(catDiv)
     }
 
+}
+function removeActive(){
+    const activeBtn=document.querySelectorAll(".active")
+
+    for(const btn of activeBtn){
+        btn.classList.remove("active")
+    }
 }
 loadCategories()
 loadAllProducts()
