@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SwiftCart-Product</title>
+    <!--Tailwind+daisyUI integration -->
+     <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
+     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+     <!-- Google font integration -->
+     <link rel="preconnect" href="https://fonts.googleapis.com">
+     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+     <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+
+     <!--font awesome integration-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    <header>
+        <!-- Navbar -->
+      <nav class="w-11/12 md:w-10/12 mx-auto ">
+        <div class="navbar bg-base-100">
+  <div class="navbar-start">
+    <a class="btn btn-ghost text-2xl font-bold text-[#4F46E5]">SwiftCart</a>
+  </div>
+  <div class="navbar-center hidden lg:flex">
+    <ul class="menu menu-horizontal px-1 gap-8">
+      <li><a  class=" font-medium text-md text-[#4B5563]" href="index.html">Home</a></li>
+       <li><a class=" font-medium text-md text-[#4B5563]"href="product.html" target="_blank">Product</a></li>
+       <li><a class=" font-medium text-md text-[#4B5563]"href="#about">About</a></li>
+       <li><a class=" font-medium text-md text-[#4B5563]"href="#contact" >Contact</a></li>
+    </ul>
+  </div>
+  <div class="navbar-end">
+     <div class="indicator">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" /> </svg>
+          <span class="badge badge-sm indicator-item">8</span>
+        </div>
+      <div class="dropdown ml-5">
+      <div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h8m-8 6h16" /> </svg>
+      </div>
+      <ul
+        tabindex="-1"
+        class="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow">
+       <li><a class=" font-medium text-md text-[#4B5563]" href="index.html">Home</a></li>
+       <li><a class=" font-medium text-md text-[#4B5563]" href="product.html" target="_blank">Product</a></li>
+       <li><a class=" font-medium text-md text-[#4B5563]" href="#about">About</a></li>
+       <li><a class=" font-medium text-md text-[#4B5563]" href="#contact">Contact</a></li>
+      </ul>
+    </div>
+  </div>
+</div>
+ </nav>
+</header>
+<!-- Our product section -->
+ <section class="w-11/12 md:w-10/12 mx-auto">
+    <h2 class="text-center text-3xl font-bold my-10">Our Product</h2>
+    <div id="category-container" class="flex justify-center items-center gap-5 flex-wrap" >
+
+    </div>
+    <div id="product-container" class="mt-16 grid grid-cols-1 md:grid-cols-4 gap-8">
+
+
+    </div>
+ </section>
+ <!-- Open the modal using ID.showModal() method -->
+<!-- <button class="btn" onclick="my_modal_5.showModal()">open modal</button> -->
+<dialog id="product_details" class="modal modal-bottom sm:modal-middle">
+  <div class="modal-box">
+    <div id="details_container">
+       <div class="card w-96 bg-base-100 shadow-sm">
+  <div class="card-body">
+    <span class="badge badge-xs badge-warning">Most Popular</span>
+    <div class="flex justify-between">
+      <h2 class="text-3xl font-bold">Premium</h2>
+      <span class="text-xl">$29/mo</span>
+    </div>
+    <ul class="mt-6 flex flex-col gap-2 text-xs">
+      <li>
+        <svg xmlns="http://www.w3.org/2000/svg" class="size-4 me-2 inline-block text-success" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg>
+        <span>High-resolution image generation</span>
+      </li>
+      <li>
+        <svg xmlns="http://www.w3.org/2000/svg" class="size-4 me-2 inline-block text-success" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg>
+        <span>Customizable style templates</span>
+      </li>
+      <li>
+        <svg xmlns="http://www.w3.org/2000/svg" class="size-4 me-2 inline-block text-success" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg>
+        <span>Batch processing capabilities</span>
+      </li>
+      <li>
+        <svg xmlns="http://www.w3.org/2000/svg" class="size-4 me-2 inline-block text-success" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg>
+        <span>AI-driven image enhancements</span>
+      </li>
+      <li class="opacity-50">
+        <svg xmlns="http://www.w3.org/2000/svg" class="size-4 me-2 inline-block text-base-content/50" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg>
+        <span class="line-through">Seamless cloud integration</span>
+      </li>
+      <li class="opacity-50">
+        <svg xmlns="http://www.w3.org/2000/svg" class="size-4 me-2 inline-block text-base-content/50" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg>
+        <span class="line-through">Real-time collaboration tools</span>
+      </li>
+    </ul>
+    <div class="mt-6">
+      <button class="btn btn-primary btn-block">Subscribe</button>
+    </div>
+  </div>
+</div>
+    </div>
+    <div class="modal-action">
+      
+    </div>
+  </div>
+</dialog>
+
+
+
+
+<!-- Newsletter & Footer section -->
+  <section class="mt-20 bg-[#1E293B]">
+    <div class="w-11/12 md:w-10/12 mx-auto py-16 px-4 md:px-0">
+        <footer class="footer sm:footer-horizontal text-[#94A3B8] gap-20">
+  <aside>
+    <h2 class="btn btn-ghost text-2xl font-bold text-[#4F46E5]">SwiftCart</h2>
+    <p>
+      Your one-stop shop for all your fashion and
+lifestyle needs. Quality products, fast
+delivery, and excellent support.
+    </p>
+  </aside>
+  <nav>
+    <h6 class="footer-title">QUICK LINKS</h6>
+    <a class="link link-hover">Home</a>
+    <a class="link link-hover">Products</a>
+    <a id="about" class="link link-hover">About</a>
+    <a class="link link-hover">Contact</a>
+  </nav>
+  <nav>
+    <h6 class="footer-title">SUPPORT</h6>
+    <a class="link link-hover">FAQ</a>
+    <a class="link link-hover">Shipping</a>
+    <a class="link link-hover">Returns</a>
+    <a class="link link-hover">Privacy Policy</a>
+  </nav>
+  <form>
+    <h6 class="footer-title">SUBSCRIBE TO OUR NEWSLETTER</h6>
+    <p>The latest news, articles, and resources, sent
+to your inbox weekly.</p>
+    <fieldset class="w-80">
+      <div class="flex gap-5">
+        <input
+          type="text"
+          placeholder="Enter your email"
+          class="input join-item" />
+        <button class="btn btn-primary join-item">Subscribe</button>
+      </div>
+    </fieldset>
+  </form>
+</footer>
+<hr class="border-t border-gray-700 my-6">
+
+<footer class="footer sm:footer-horizontal text-[#94A3B8] items-center">
+  <aside class="grid-flow-col items-center">
+
+    <p>© 2025 SwiftCart, Inc. All rights reserved
+</p>
+  </aside>
+  <nav id="contact" class="grid-flow-col gap-4 md:place-self-center md:justify-self-end transition duration-300">
+    <a><i class="fa-brands fa-facebook-f text-[#94A3B8] text-xl hover:text-white transition
+"></i>
+    </a>
+    <a>
+     <i class="fa-brands fa-twitter text-[#94A3B8] text-xl hover:text-white transition
+"></i>
+    </a>
+    <a>
+      <i class="fa-brands fa-instagram text-[#94A3B8] text-xl hover:text-white transition
+"></i>
+    </a>
+  </nav>
+</footer>
+
+     </div>
+  </section>
+    
+    <script src="./script/product.js"></script>
+</body>
+</html>

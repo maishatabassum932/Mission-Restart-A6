@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -17,21 +17,24 @@
      <!--font awesome integration-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
+    <!-- Css Integration -->
+     <link rel="stylesheet" href="./Style/style.css">
+
 </head>
 <body>
     <header>
         <!-- Navbar -->
-      <nav class="w-11/12 md:w-10/12 mx-auto sticky top-0 bg-white z-50">
+      <nav class="w-11/12 md:w-10/12 mx-auto ">
         <div class="navbar bg-base-100">
   <div class="navbar-start">
     <a class="btn btn-ghost text-2xl font-bold text-[#4F46E5]">SwiftCart</a>
   </div>
   <div class="navbar-center hidden lg:flex">
     <ul class="menu menu-horizontal px-1 gap-8">
-      <li><a  class=" font-medium text-md text-[#4B5563]" href="" target="_blank">Home</a></li>
-       <li><a class=" font-medium text-md text-[#4B5563]"href="" target="_blank">Product</a></li>
-       <li><a class=" font-medium text-md text-[#4B5563]"href="" target="_blank">About</a></li>
-       <li><a class=" font-medium text-md text-[#4B5563]"href="" target="_blank">Contact</a></li>
+      <li><a  class=" font-medium text-md text-[#4B5563]" href="index.html">Home</a></li>
+       <li><a class=" font-medium text-md text-[#4B5563]"href="product.html" target="_blank">Product</a></li>
+       <li><a class=" font-medium text-md text-[#4B5563]"href="#about">About</a></li>
+       <li><a class=" font-medium text-md text-[#4B5563]"href="#contact" >Contact</a></li>
     </ul>
   </div>
   <div class="navbar-end">
@@ -46,10 +49,10 @@
       <ul
         tabindex="-1"
         class="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow">
-       <li><a class=" font-medium text-md text-[#4B5563]" href="" target="_blank">Home</a></li>
-       <li><a class=" font-medium text-md text-[#4B5563]" href="" target="_blank">Product</a></li>
-       <li><a class=" font-medium text-md text-[#4B5563]" href="" target="_blank">About</a></li>
-       <li><a class=" font-medium text-md text-[#4B5563]" href="" target="_blank">Contact</a></li>
+       <li><a class=" font-medium text-md text-[#4B5563]" href="index.html">Home</a></li>
+       <li><a class=" font-medium text-md text-[#4B5563]" href="product.html" target="_blank">Product</a></li>
+       <li><a class=" font-medium text-md text-[#4B5563]" href="#about">About</a></li>
+       <li><a class=" font-medium text-md text-[#4B5563]" href="#contact">Contact</a></li>
       </ul>
     </div>
   </div>
@@ -229,7 +232,7 @@ delivery, and excellent support.
     <h6 class="footer-title">QUICK LINKS</h6>
     <a class="link link-hover">Home</a>
     <a class="link link-hover">Products</a>
-    <a class="link link-hover">About</a>
+    <a id="about" class="link link-hover">About</a>
     <a class="link link-hover">Contact</a>
   </nav>
   <nav>
@@ -262,7 +265,7 @@ to your inbox weekly.</p>
     <p>© 2025 SwiftCart, Inc. All rights reserved
 </p>
   </aside>
-  <nav class="grid-flow-col gap-4 md:place-self-center md:justify-self-end">
+  <nav id="contact" class="grid-flow-col gap-4 md:place-self-center md:justify-self-end transition duration-300">
     <a><i class="fa-brands fa-facebook-f text-[#94A3B8] text-xl hover:text-white transition
 "></i>
     </a>
